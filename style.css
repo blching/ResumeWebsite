@@ -1,7 +1,33 @@
 body {
+    margin: 0px;
     background-color: AntiqueWhite;
 }
 
 .websiteHeader {
-    text-align : center;
+    position: relative;
+    text-align: center;
+    padding: 1px;
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    background-color: whitesmoke;
+    margin: 0px;
+}
+
+li a {
+    padding: 0 16px;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: lightgray;
 }
