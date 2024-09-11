@@ -12,14 +12,17 @@
             
 
             <ul>
-            <li><a href="home.html">Resume</a></li>
-            <li><a href="transcript.html"> Transcript</a></li>
-            <li><a>Projects</a></li>
+                <li><a href="home.html">Resume</a></li>
+                <li><a href="transcript.html"> Transcript</a></li>
+                <li class="dropdown"><a>Projects</a> <div class="dropdown-content">
+                  <a href="prj1.html">Link 1</a>
+                  <a href="prj2.html">Link 2</a>
+                </div></li>
             </ul>
         </div>
 
         <h4>Please Enter Your Password:</h4>
-        <form id="passform" onsubmit="checkPass()">
+        <form id="passform">
             <input type="text" id="passwordInput" name="passwordInput">
             <input type="submit">
         </form>
@@ -28,19 +31,22 @@
             const correctPassword = "brandonching";
         
             document.getElementById("passform").addEventListener("submit", function(event) {
-        
-              const inputPassword = document.getElementById("passwordInput").value;
-        
-              if (inputPassword === correctPassword) {
-                alert("Password correct");
-              } else {
-                alert("Password incorrect");
-              }
+                event.preventDefault()
+
+                const inputPassword = document.getElementById("passwordInput").value;
+                const x = document.getElementById("transcript");
+
+                if (inputPassword === correctPassword) {
+                    document.getElementById("transcript").style.visibility = "visible"
+                } else {
+                    document.getElementById("transcript").style.visibility = "hidden"
+                    alert("Password is Incorrect")
+                }
 
             });
-          </script>
+        </script>
 
-        <div>
+        <div id="transcript" style="visibility: hidden">
             <h3>Fall 2021</h3>
             <table>
                 <tr>
@@ -302,6 +308,8 @@
                     <td>3.0</td>
                 </tr>
             </table>
+            
+            <h3>Total GPA: 3.71</h3>
         </div>
     </body>
 </html>
